@@ -1,0 +1,24 @@
+[project]
+name = "taque"
+version = "0.1.0"
+description = "Work time tracker TUI application"
+readme = "README.md"
+authors = [
+    { name = "PedroDeSanti", email = "phmartinsanti@gmail.com" }
+]
+requires-python = ">=3.12"
+dependencies = [
+    "textual>=7.0.0",
+]
+
+[project.scripts]
+taque = "taque:main"
+
+[build-system]
+requires = ["uv_build>=0.9.22,<0.10.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "textual-dev>=1.8.0",
+]
