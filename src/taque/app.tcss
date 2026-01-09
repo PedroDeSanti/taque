@@ -1,0 +1,7 @@
+TaqueApp {
+    background: blue;
+}
+
+Timer {
+    background: red;
+}
