@@ -3,5 +3,24 @@ TaqueApp {
 }
 
 Timer {
+    border: round cyan;
     background: red;
+}
+
+TimeDisplay {
+    height: 5;
+    background: green;
+    content-align: center middle;
+    margin: 1;
+    padding: 1;
+}
+
+Timer Container {
+    height: 10;
+    padding: 1;
+    margin: 1;
+    background: yellow;
+    layout: horizontal;
+    # there are 3 buttons inside this container, I want them to be evenly spaced and centered
+    content-align: center middle;
 }
