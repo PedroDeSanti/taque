@@ -1,16 +1,17 @@
 TaqueApp {
-    background: blue;
+    # background: blue;
 }
 
 Timer {
     border: round cyan;
-    background: red;
+    # background: red;
 }
 
 TimeDisplay {
     height: 5;
-    background: green;
+    # background: green;
     content-align: center middle;
+    text-align: center;
     margin: 1;
     padding: 1;
 }
@@ -19,8 +20,40 @@ Timer Container {
     height: 10;
     padding: 1;
     margin: 1;
-    background: yellow;
+    # background: yellow;
     layout: horizontal;
     # there are 3 buttons inside this container, I want them to be evenly spaced and centered
     content-align: center middle;
+    align: center middle;
+}
+
+Button {
+    text-style: bold;
+    color: $button-foreground;
+    background: $surface 0%;
+    border: none;
+    min-width: 10;
+    height: auto;
+
+    padding: 1 1;
+    margin: 0 3;
+    width: auto;
+
+    &:disabled {
+        text-opacity: 0.6;
+    }
+
+    &:focus {
+        text-style: $button-focus-text-style;
+        background-tint: $foreground 5%;
+    }
+
+    &:hover {
+        background: $surface-darken-1;
+    }
+
+    &.-active {
+        background: $surface;
+        tint: $background 30%;
+    }
 }

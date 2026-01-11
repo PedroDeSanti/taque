@@ -4,11 +4,12 @@ from textual.widgets import Header, Footer, Static, Button, Static
 from textual.containers import HorizontalGroup, Container
 from textual import on
 from textual.reactive import reactive
+from textual.widgets import Digits
+from textual.binding import Binding
 
-from time import monotonic
+from time import monotonic, time
 
-
-class TimeDisplay(Static):
+class TimeDisplay(Digits):
     """A widget to display the time"""
 
     accumulated_time = 0
@@ -73,9 +74,9 @@ class Timer(Static):
         yield TimeDisplay("00:00:00")
 
         with Container():
-            yield Button("Work", id="work-button")
-            yield Button("Break", id="break-button")
-            yield Button("Stop", id="stop-button")
+            yield Button("< Work >", id="work-button")
+            yield Button("< Break >", id="break-button")
+            yield Button("< Stop >", id="stop-button")
         
 class TaqueApp(App):
     BINDINGS = [
@@ -102,26 +103,3 @@ class TaqueApp(App):
     def action_stop_timer(self) -> None:
         self.query_one(Timer).stop_timer()
 
-# from textual.app import App
-# from textual.containers import Container
-# from textual.widgets import Static
-
-# class TaqueBox(Static):
-#     """Um widget customizado com borda e título."""
-    
-#     def __init__(self):
-#         super().__init__()
-#         self.border_title = "Taque"
-
-# class TaqueApp(App):
-#     CSS = """
-#     TaqueBox {
-#         border: round cyan;
-#         padding: 2;
-#         margin: 2;
-#         height: auto;
-#     }
-#     """
-
-#     def compose(self):
-#         yield TaqueBox()
