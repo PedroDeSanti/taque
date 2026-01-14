@@ -1,10 +1,19 @@
+Screen {
+    background: transparent;
+}
+
+
 TaqueApp {
     # background: blue;
+    # background-tint: blue 0%;
 }
 
 Timer {
     border: round cyan;
-    # background: red;
+    # height: 100%;
+    # width: auto;
+    width: 60;
+    background: red 0%;
 }
 
 TimeDisplay {
